@@ -51,6 +51,8 @@
         published_ports:
           - '{{ports.stdout}}{{extport}}:{{intport}}'
         volumes: '{{pg_volumes}}'
+        devices:
+          - '/dev/ttyACM0:/zwaveusbstick'
         env: '{{pg_env}}'
         restart_policy: unless-stopped
         networks:
